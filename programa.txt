@@ -1,0 +1,23 @@
+entity Botao {
+   id: "botao-submit"
+   events: click
+}
+
+entity CaixaTexto {
+   id: "caixa-texto-1"
+   events: click, hover
+}
+
+entity Dialog1 {
+   id: "dialog-show-response"
+}
+
+test-case testaBotao {
+   when: Botao.click
+   assert: Dialog1 is visible
+}
+
+test-case testaCaixaTexto {
+   when: CaixaTexto.hover
+   assert: CaixaTexto is highlighted
+}
