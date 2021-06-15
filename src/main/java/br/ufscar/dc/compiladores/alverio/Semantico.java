@@ -13,8 +13,7 @@ public class Semantico extends AlverioBaseVisitor<Void>{
 	
 	@Override
 	public Void visitEntity(EntityContext ctx) {
-		entityList.add(ctx.entityId.getText());
-		
+		entityList.add(ctx.name.getText());
 		return null;
 	}
 	

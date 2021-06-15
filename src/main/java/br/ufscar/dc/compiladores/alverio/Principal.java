@@ -22,7 +22,7 @@ public class Principal {
         if(s.hasError) {
         	System.err.println("Teve erro");
         }else {
-        	System.out.println("Não teve erro");
+        	System.err.println("Nao teve erro");
         }
     }
 	
