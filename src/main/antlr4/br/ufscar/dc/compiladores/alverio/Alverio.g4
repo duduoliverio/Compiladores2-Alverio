@@ -20,4 +20,4 @@ condition: element=ID '.' event=ID;
 
 query: element=ID assertType;
 
-assertType: 'is' 'highlighted' | 'is' 'visible';
+assertType: 'is' 'class' className=STRING | 'is' 'visible';

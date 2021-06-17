@@ -3,9 +3,11 @@ br\ufscar\dc\compiladores\alverio\AlverioListener.class
 br\ufscar\dc\compiladores\alverio\AlverioParser$QueryContext.class
 br\ufscar\dc\compiladores\alverio\AlverioParser$AssertTypeContext.class
 br\ufscar\dc\compiladores\alverio\AlverioParser$ProgramContext.class
+br\ufscar\dc\compiladores\alverio\EntityStruct.class
 br\ufscar\dc\compiladores\alverio\AlverioLexer.class
 br\ufscar\dc\compiladores\alverio\AlverioParser.class
 br\ufscar\dc\compiladores\alverio\AlverioParser$TestcaseContext.class
+br\ufscar\dc\compiladores\alverio\AlverioGerador.class
 br\ufscar\dc\compiladores\alverio\AlverioVisitor.class
 br\ufscar\dc\compiladores\alverio\AlverioBaseListener.class
 br\ufscar\dc\compiladores\alverio\Semantico.class

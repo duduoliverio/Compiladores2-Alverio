@@ -19,5 +19,5 @@ test-case testaBotao {
 
 test-case testaCaixaTexto {
    when: CaixaTexto.hover
-   assert: CaixaTexto is highlighted
+   assert: CaixaTexto is class "class-name"
 }

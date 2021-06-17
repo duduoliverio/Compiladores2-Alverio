@@ -32,7 +32,7 @@ public class AlverioParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'entity'", "'{'", "'id'", "':'", "'events'", "','", "'}'", "'test-case'", 
-			"'when'", "'assert'", "'.'", "'is'", "'highlighted'", "'visible'"
+			"'when'", "'assert'", "'.'", "'is'", "'class'", "'visible'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -435,6 +435,8 @@ public class AlverioParser extends Parser {
 	}
 
 	public static class AssertTypeContext extends ParserRuleContext {
+		public Token className;
+		public TerminalNode STRING() { return getToken(AlverioParser.STRING, 0); }
 		public AssertTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -458,7 +460,7 @@ public class AlverioParser extends Parser {
 		AssertTypeContext _localctx = new AssertTypeContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_assertType);
 		try {
-			setState(61);
+			setState(62);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
@@ -468,14 +470,16 @@ public class AlverioParser extends Parser {
 				match(T__11);
 				setState(58);
 				match(T__12);
+				setState(59);
+				((AssertTypeContext)_localctx).className = match(STRING);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(59);
-				match(T__11);
 				setState(60);
+				match(T__11);
+				setState(61);
 				match(T__13);
 				}
 				break;
@@ -493,23 +497,23 @@ public class AlverioParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23B\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23C\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\3\2\7\2\21\n\2\f\2\16\2\24\13\2"+
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3!\n\3\f\3\16\3$\13\3\5"+
 		"\3&\n\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3"+
-		"\5\3\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\5\7@\n\7\3\7\2\2\b\2\4\6\b\n\f\2\2"+
-		"\2@\2\22\3\2\2\2\4\25\3\2\2\2\6)\3\2\2\2\b\64\3\2\2\2\n8\3\2\2\2\f?\3"+
-		"\2\2\2\16\21\5\4\3\2\17\21\5\6\4\2\20\16\3\2\2\2\20\17\3\2\2\2\21\24\3"+
-		"\2\2\2\22\20\3\2\2\2\22\23\3\2\2\2\23\3\3\2\2\2\24\22\3\2\2\2\25\26\7"+
-		"\3\2\2\26\27\7\21\2\2\27\30\7\4\2\2\30\31\7\5\2\2\31\32\7\6\2\2\32%\7"+
-		"\22\2\2\33\34\7\7\2\2\34\35\7\6\2\2\35\"\7\21\2\2\36\37\7\b\2\2\37!\7"+
-		"\21\2\2 \36\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#&\3\2\2\2$\"\3\2\2"+
-		"\2%\33\3\2\2\2%&\3\2\2\2&\'\3\2\2\2\'(\7\t\2\2(\5\3\2\2\2)*\7\n\2\2*+"+
-		"\7\21\2\2+,\7\4\2\2,-\7\13\2\2-.\7\6\2\2./\5\b\5\2/\60\7\f\2\2\60\61\7"+
-		"\6\2\2\61\62\5\n\6\2\62\63\7\t\2\2\63\7\3\2\2\2\64\65\7\21\2\2\65\66\7"+
-		"\r\2\2\66\67\7\21\2\2\67\t\3\2\2\289\7\21\2\29:\5\f\7\2:\13\3\2\2\2;<"+
-		"\7\16\2\2<@\7\17\2\2=>\7\16\2\2>@\7\20\2\2?;\3\2\2\2?=\3\2\2\2@\r\3\2"+
-		"\2\2\7\20\22\"%?";
+		"\5\3\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\5\7A\n\7\3\7\2\2\b\2\4\6\b\n\f"+
+		"\2\2\2A\2\22\3\2\2\2\4\25\3\2\2\2\6)\3\2\2\2\b\64\3\2\2\2\n8\3\2\2\2\f"+
+		"@\3\2\2\2\16\21\5\4\3\2\17\21\5\6\4\2\20\16\3\2\2\2\20\17\3\2\2\2\21\24"+
+		"\3\2\2\2\22\20\3\2\2\2\22\23\3\2\2\2\23\3\3\2\2\2\24\22\3\2\2\2\25\26"+
+		"\7\3\2\2\26\27\7\21\2\2\27\30\7\4\2\2\30\31\7\5\2\2\31\32\7\6\2\2\32%"+
+		"\7\22\2\2\33\34\7\7\2\2\34\35\7\6\2\2\35\"\7\21\2\2\36\37\7\b\2\2\37!"+
+		"\7\21\2\2 \36\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#&\3\2\2\2$\"\3\2"+
+		"\2\2%\33\3\2\2\2%&\3\2\2\2&\'\3\2\2\2\'(\7\t\2\2(\5\3\2\2\2)*\7\n\2\2"+
+		"*+\7\21\2\2+,\7\4\2\2,-\7\13\2\2-.\7\6\2\2./\5\b\5\2/\60\7\f\2\2\60\61"+
+		"\7\6\2\2\61\62\5\n\6\2\62\63\7\t\2\2\63\7\3\2\2\2\64\65\7\21\2\2\65\66"+
+		"\7\r\2\2\66\67\7\21\2\2\67\t\3\2\2\289\7\21\2\29:\5\f\7\2:\13\3\2\2\2"+
+		";<\7\16\2\2<=\7\17\2\2=A\7\22\2\2>?\7\16\2\2?A\7\20\2\2@;\3\2\2\2@>\3"+
+		"\2\2\2A\r\3\2\2\2\7\20\22\"%@";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
