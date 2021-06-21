@@ -10,8 +10,8 @@ public class AlverioGerador extends AlverioBaseVisitor<Void> {
 	public Void visitTestcase(TestcaseContext ctx) {
 
 		String nomeTestcase = ctx.name.getText();
-		texto.append("public void "+nomeTestcase+"(){\n");
-		texto.append("}\n");
+		texto.append("	public void "+nomeTestcase+"(){\n");
+		texto.append("		}\n");
 		return super.visitTestcase(ctx);
 	}
 
