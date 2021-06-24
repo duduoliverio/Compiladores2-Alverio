@@ -21,6 +21,7 @@ public class Semantico extends AlverioBaseVisitor<Void> {
 		for (Token t : ctx.eventsId) {
 			es.events.add(t.getText());
 		}
+		entityList.add(es);
 		return null;
 	}
 
@@ -28,11 +29,10 @@ public class Semantico extends AlverioBaseVisitor<Void> {
 	public Void visitTestcase(TestcaseContext ctx) {
 		String elementName = ctx.condition().element.getText();
 		String eventName = ctx.condition().event.getText();
-		if (!entityList.contains(elementName)) {
-			System.err.println("Entity " + elementName + " not declared");
-			hasError = true;
-		}
-
+//		if (!entityList.contains(elementName)) {
+//			System.err.println("Entity " + elementName + " not declared");
+//			hasError = true;
+//		}
 		return null;
 	}
 }

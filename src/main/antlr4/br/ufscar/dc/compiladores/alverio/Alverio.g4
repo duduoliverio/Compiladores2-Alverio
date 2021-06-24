@@ -7,7 +7,7 @@ WS: [ \t\n\r]->skip;
 program: (entity | testcase)*;
 
 entity: 'entity' name=ID '{'
-   'id' ':' entityId=STRING
+   'xpath' ':' entityXpath=STRING
    ('events' ':' eventsId+=ID ( ',' eventsId+=ID )*)?
 '}';
 
@@ -20,4 +20,4 @@ condition: element=ID '.' event=ID;
 
 query: element=ID assertType;
 
-assertType: 'is' 'class' className=STRING | 'is' 'visible';
+assertType: 'has-content' content=STRING;

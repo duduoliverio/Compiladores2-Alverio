@@ -1,1 +1,0 @@
-java -jar "D:\Users\dudu\Nova pasta (2)\AlverioSintatico\target\AlverioSintatico-0.0.1-SNAPSHOT-jar-with-dependencies.jar" "D:\Users\dudu\Nova pasta (2)\AlverioSintatico\programa.txt" ./TestSuite.java

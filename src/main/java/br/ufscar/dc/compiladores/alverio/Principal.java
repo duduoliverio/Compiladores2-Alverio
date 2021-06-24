@@ -25,12 +25,18 @@ public class Principal {
 		File f = new File(args[1]);
 		String className = f.getName().substring(0, f.getName().length() - 5);
 		try (PrintWriter pw = new PrintWriter(f)) {
-			pw.println("package tests;\n");
-			pw.println("public class " + className + "{");
+			pw.println("package br.ufscar.dc.compiladores.tests;\n");
+			pw.println("import org.junit.Assert;");
+			pw.println("import org.openqa.selenium.By;");
+			pw.println("import org.openqa.selenium.WebDriver;");
+			pw.println("import org.openqa.selenium.chrome.ChromeDriver;");
+			pw.println("import org.junit.Test;\n");
+			pw.println("public class " + className + "{\n");
+			pw.println("");
 			AlverioGerador ag = new AlverioGerador();
 			ag.visitProgram(tree);
 			pw.append(ag.texto);
-			pw.println("}");
+			pw.println("\n}");
 		}
 
 	}

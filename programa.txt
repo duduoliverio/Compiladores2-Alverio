@@ -1,23 +1,15 @@
 entity Botao {
-   id: "botao-submit"
+   xpath: "//button[@class='btn btn-primary']"
    events: click
 }
 
-entity CaixaTexto {
-   id: "caixa-texto-1"
-   events: click, hover
-}
-
-entity Dialog1 {
-   id: "dialog-show-response"
+entity MensagemErroEmail {
+   xpath: "//div[@class='alert alert-danger']"
 }
 
 test-case testaBotao {
    when: Botao.click
-   assert: Dialog1 is visible
+   assert: MensagemErroEmail has-content "Emaial é um campo obrigatório"
 }
 
-test-case testaCaixaTexto {
-   when: CaixaTexto.hover
-   assert: CaixaTexto is class "class-name"
-}
+

@@ -7,4 +7,5 @@ public class EntityStruct {
 
 	String name;
 	List<String> events = new ArrayList<>();
+	String xpath;
 }
