@@ -3,13 +3,34 @@ entity Botao {
    events: click
 }
 
+entity TituloSite {
+   xpath: "//*[@id='email']"
+   events: isSelected
+}
+
 entity MensagemErroEmail {
    xpath: "//div[@class='alert alert-danger']"
 }
 
-test-case testaBotao {
-   when: Botao.click
-   assert: MensagemErroEmail has-content "Emaial é um campo obrigatório"
+entity MensagemErroSenha {
+   xpath: "//div[2][@class='alert alert-danger']"
 }
 
+entity Titulo {
+   xpath: "//*[@id='email']"
+}
 
+test-case testaBotaoEmail {
+   when: Botao.click
+   assert: MensagemErroEmail has-content "Email é um campo obrigatório"
+}
+
+test-case testaBotaoSenha {
+   when: Botao.click
+   assert: MensagemErroSenha has-content "Senha é um campo obrigatório"
+}
+
+test-case testaTitulo {
+   when: TituloSite.getTitle
+   assert: Titulo has-content ""
+}

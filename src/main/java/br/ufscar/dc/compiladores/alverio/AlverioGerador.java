@@ -37,8 +37,9 @@ public class AlverioGerador extends AlverioBaseVisitor<Void> {
 		texto.append("		driver.get(\"https://seubarriga.wcaquino.me/login\");\n\n");
 							
 		texto.append("		driver.findElement(By.xpath("+esCondition.xpath+")).click();\n");
-		//if para testar outros asserts
+		
 		texto.append("		Assert.assertEquals("+ctx.query().assertType().content.getText()+", driver.findElement(By.xpath("+esQuery.xpath+")).getText());\n");
+		texto.append("		driver.quit();\n");
 		texto.append("	}\n");
 		
 		return super.visitTestcase(ctx);
@@ -55,7 +56,6 @@ public class AlverioGerador extends AlverioBaseVisitor<Void> {
 		
 		es.xpath = ctx.entityXpath.getText();
 		entityList.add(es);
-		
 		
 		return super.visitEntity(ctx);
 	}
