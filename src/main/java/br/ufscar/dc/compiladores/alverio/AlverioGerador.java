@@ -36,7 +36,7 @@ public class AlverioGerador extends AlverioBaseVisitor<Void> {
 		texto.append("		WebDriver driver = new ChromeDriver();\n");
 		texto.append("		driver.get(\"https://seubarriga.wcaquino.me/login\");\n\n");
 							
-		texto.append("		driver.findElement(By.xpath("+esCondition.xpath+")).click();\n");
+		texto.append("		driver.findElement(By.xpath("+esCondition.xpath+"))."+ctx.condition().event.getText()+"();\n");
 		
 		texto.append("		Assert.assertEquals("+ctx.query().assertType().content.getText()+", driver.findElement(By.xpath("+esQuery.xpath+")).getText());\n");
 		texto.append("		driver.quit();\n");

@@ -30,12 +30,12 @@ public class TestSuite{
 		driver.quit();
 	}
 	@Test
-	public void testaTitulo(){
+	public void testaSelecaoEmail(){
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://seubarriga.wcaquino.me/login");
 
-		driver.findElement(By.xpath("//*[@id='email']")).click();
+		driver.findElement(By.xpath("//*[@id='email']")).isSelected();
 		Assert.assertEquals("", driver.findElement(By.xpath("//*[@id='email']")).getText());
 		driver.quit();
 	}

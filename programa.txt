@@ -3,7 +3,7 @@ entity Botao {
    events: click
 }
 
-entity TituloSite {
+entity SelecaoEmail {
    xpath: "//*[@id='email']"
    events: isSelected
 }
@@ -16,7 +16,7 @@ entity MensagemErroSenha {
    xpath: "//div[2][@class='alert alert-danger']"
 }
 
-entity Titulo {
+entity Email {
    xpath: "//*[@id='email']"
 }
 
@@ -30,7 +30,7 @@ test-case testaBotaoSenha {
    assert: MensagemErroSenha has-content "Senha é um campo obrigatório"
 }
 
-test-case testaTitulo {
-   when: TituloSite.getTitle
-   assert: Titulo has-content ""
+test-case testaSelecaoEmail {
+   when: SelecaoEmail.isSelected
+   assert: Email has-content ""
 }
