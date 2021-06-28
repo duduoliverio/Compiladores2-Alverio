@@ -5,12 +5,14 @@ Eduardo Oliverio 614033
 Alvaro Pedro Magalhães 587818
 
 Repositório destinado à matéria de Construção de Compiladores 2 da Universidade Federal de São Carlos - ENPE 2020/2
+
 A linguagem Alverio foi criada para testes web a partir do Selenium, com orientação do professor Daniel Lucredio. @dlucredio.
 
 ---
 
 ### Desenvolvimento
 O primeiro passo foi esboçar a linguagem Alverio com base no programa criado.
+
 No programa consta os xpaths (referenciar partes de um documento) e o evento que aquela entidade pode executar. E por fim os testcases que são as verificações que devem acontecer após o evento.
 
 ```sh
@@ -93,7 +95,9 @@ java -jar "\AlverioSintatico\target\AlverioSintatico-0.0.1-SNAPSHOT-jar-with-dep
 ```
 
 O arquivo TesteSuite.java será gerado na pasta em que foi executado o comando.
+
 Ao final da execução será possível ver o seguinte código.
+
 São 3 testes que executam validações distintas de login no site https://seubarriga.wcaquino.me/login
 
 ```sh
