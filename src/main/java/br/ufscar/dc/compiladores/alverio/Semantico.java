@@ -30,13 +30,6 @@ public class Semantico extends AlverioBaseVisitor<Void> {
 		String elementName = ctx.condition().element.getText();
 		String eventName = ctx.condition().event.getText();
 		
-//		faça um for em entityList
-//		para cada elemento, verifique se elementName está em entityList
-//		tem que comparar pelo nome, usando equals, o contains não funciona mais pois a gente mudou de string para EntityStruct, lembra?).
-//		Se não estiver, dê erro de entidade não declarada
-//		se estiver, faça um for em entityList.events e verifique se eventName está em entityList.events.
-//		Se não estiver, dê erro de entidade não declarada.
-		
 		for(EntityStruct es : entityList) {
 			if(!es.name.equals(elementName)) {
 				System.err.println("Entity " + elementName + " not declared");
